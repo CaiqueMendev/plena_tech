@@ -10,6 +10,7 @@ const nextConfig = {
       },
     ],
   },
+  output: 'export',  // Adicionando a configuração para exportação estática
 };
 
 module.exports = nextConfig;

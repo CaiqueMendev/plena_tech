@@ -9,10 +9,10 @@ const Pricing = () => {
     <section id="pricing" className="relative z-10 py-16 md:py-20 lg:py-28">
       <div className="container">
         <SectionTitle
-          title="Simple and Affordable Pricing"
-          paragraph="There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form."
+          title="Soluções para Todos os Níveis"
+          paragraph="Nossos serviços foram criados para atender empresas de diferentes portes. Escolha a opção que melhor se encaixa no seu negócio e comece hoje mesmo!"
           center
-          width="665px"
+          width="680px"
         />
 
         <div className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 lg:grid-cols-2">
