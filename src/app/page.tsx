@@ -25,7 +25,6 @@ export default function Home() {
       <Features />
       <AboutSectionOne />
       <AboutSectionTwo />
-      <Testimonials />
       <Pricing />
       <Blog />
       <Contact />

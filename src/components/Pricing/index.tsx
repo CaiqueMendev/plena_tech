@@ -5,8 +5,6 @@ import OfferList from "./OfferList";
 import PricingBox from "./PricingBox";
 
 const Pricing = () => {
-  const [isMonthly, setIsMonthly] = useState(true);
-
   return (
     <section id="pricing" className="relative z-10 py-16 md:py-20 lg:py-28">
       <div className="container">
@@ -17,86 +15,51 @@ const Pricing = () => {
           width="665px"
         />
 
-        <div className="w-full">
-          <div className="mb-8 flex justify-center md:mb-12 lg:mb-16">
-            <span
-              onClick={() => setIsMonthly(true)}
-              className={`${
-                isMonthly
-                  ? "pointer-events-none text-primary"
-                  : "text-dark dark:text-white"
-              } mr-4 cursor-pointer text-base font-semibold`}
-            >
-              Monthly
-            </span>
-            <div
-              onClick={() => setIsMonthly(!isMonthly)}
-              className="flex cursor-pointer items-center"
-            >
-              <div className="relative">
-                <div className="h-5 w-14 rounded-full bg-[#1D2144] shadow-inner"></div>
-                <div
-                  className={`${
-                    isMonthly ? "" : "translate-x-full"
-                  } shadow-switch-1 absolute left-0 top-[-4px] flex h-7 w-7 items-center justify-center rounded-full bg-primary transition`}
-                >
-                  <span className="active h-4 w-4 rounded-full bg-white"></span>
-                </div>
-              </div>
-            </div>
-            <span
-              onClick={() => setIsMonthly(false)}
-              className={`${
-                isMonthly
-                  ? "text-dark dark:text-white"
-                  : "pointer-events-none text-primary"
-              } ml-4 cursor-pointer text-base font-semibold`}
-            >
-              Yearly
-            </span>
-          </div>
-        </div>
+        <div className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 lg:grid-cols-2">
+          <PricingBox
+            packageName="One Page Profissional"
+            subtitle="Profissionais, pequenos negócios e lançamentos de produtos."
+          >
+            <OfferList text="Site único e impactante" status="active" />
+            <OfferList text="Design profissional e responsivo" status="active" />
+            <OfferList text="Otimização para SEO e velocidade" status="active" />
+            <OfferList text="Integração com redes sociais" status="active" />
+            <OfferList text="Entrega rápida" status="active" />
+          </PricingBox>
 
-        <div className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
           <PricingBox
-            packageName="Lite"
-            price={isMonthly ? "40" : "120"}
-            duration={isMonthly ? "mo" : "yr"}
-            subtitle="Lorem ipsum dolor sit amet adiscing elit Mauris egestas enim."
+            packageName="Website Empresarial"
+            subtitle="Empresas que precisam de um site estruturado para fortalecer a marca."
           >
-            <OfferList text="All UI Components" status="active" />
-            <OfferList text="Use with Unlimited Projects" status="active" />
-            <OfferList text="Commercial Use" status="active" />
-            <OfferList text="Email Support" status="active" />
-            <OfferList text="Lifetime Access" status="inactive" />
-            <OfferList text="Free Lifetime Updates" status="inactive" />
+            <OfferList text="Site multi-página" status="active" />
+            <OfferList text="Painel administrativo" status="active" />
+            <OfferList text="Gerenciador de conteúdo" status="active" />
+            <OfferList text="Otimização para SEO e Google Analytics" status="active" />
+            <OfferList text="Integrações personalizadas" status="active" />
           </PricingBox>
+
           <PricingBox
-            packageName="Basic"
-            price={isMonthly ? "399" : "789"}
-            duration={isMonthly ? "mo" : "yr"}
-            subtitle="Lorem ipsum dolor sit amet adiscing elit Mauris egestas enim."
+            packageName="Software Essencial"
+            subtitle="Pequenas empresas que precisam de automação de processos."
           >
-            <OfferList text="All UI Components" status="active" />
-            <OfferList text="Use with Unlimited Projects" status="active" />
-            <OfferList text="Commercial Use" status="active" />
-            <OfferList text="Email Support" status="active" />
-            <OfferList text="Lifetime Access" status="active" />
-            <OfferList text="Free Lifetime Updates" status="inactive" />
+            <OfferList text="Sistema web funcional e personalizado para demandas específicas" status="active" />
+            <OfferList text="Login de usuários e painel administrativo" status="active" />
+            <OfferList text="Banco de dados e CRUD (criação, leitura, atualização e exclusão)" status="active" />
+            <OfferList text="Integração com APIs básicas" status="active" />
+            <OfferList text="Ambiente seguro e escalável" status="active" />
           </PricingBox>
+
           <PricingBox
-            packageName="Plus"
-            price={isMonthly ? "589" : "999"}
-            duration={isMonthly ? "mo" : "yr"}
-            subtitle="Lorem ipsum dolor sit amet adiscing elit Mauris egestas enim."
+            packageName="Software Avançado"
+            subtitle="Empresas que precisam de sistemas de alto desempenho e escalabilidade."
           >
-            <OfferList text="All UI Components" status="active" />
-            <OfferList text="Use with Unlimited Projects" status="active" />
-            <OfferList text="Commercial Use" status="active" />
-            <OfferList text="Email Support" status="active" />
-            <OfferList text="Lifetime Access" status="active" />
-            <OfferList text="Free Lifetime Updates" status="active" />
+            <OfferList text="Desenvolvimento de software robusto e escalável" status="active" />
+            <OfferList text="Integração com sistemas terceiros (ERP, CRM, pagamentos, etc..)" status="active" />
+            <OfferList text="Inteligência Artificial, BI e automação de processos" status="active" />
+            <OfferList text="Infraestrutura em nuvem" status="active" />
+            <OfferList text="Suporte e manutenção contínuos" status="active" />
           </PricingBox>
+
         </div>
       </div>
 
