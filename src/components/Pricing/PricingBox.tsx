@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const PricingBox = (props: {
   packageName: string;
   subtitle: string;
@@ -18,9 +20,11 @@ const PricingBox = (props: {
           <p>{subtitle}</p>
         </div>
        <div className="mb-8 border-b border-body-color border-opacity-10 pb-8 dark:border-white dark:border-opacity-10">
-          <button className="flex w-60 items-center justify-center rounded-sm bg-primary p-3 text-base font-semibold text-white transition duration-300 ease-in-out hover:bg-opacity-80 hover:shadow-signUp">
-            Solicitar Desenvolvimento
-          </button>
+          <Link href={"/contact"}>
+            <button className="flex w-60 items-center justify-center rounded-sm bg-primary p-3 text-base font-semibold text-white transition duration-300 ease-in-out hover:bg-opacity-80 hover:shadow-signUp">
+              Solicitar Desenvolvimento
+            </button>
+          </Link>
         </div>
         <div>{children}</div>
         <div className="absolute bottom-0 right-0 z-[-1]">

@@ -1,10 +1,28 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 import SectionTitle from "../Common/SectionTitle";
 import OfferList from "./OfferList";
 import PricingBox from "./PricingBox";
 
 const Pricing = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <section id="pricing" className="relative z-10 py-16 md:py-20 lg:py-28">
       <div className="container">
@@ -14,8 +32,69 @@ const Pricing = () => {
           center
           width="680px"
         />
+        {isMobile ? (
+        <Swiper
+          modules={[Pagination]}
+          spaceBetween={30}
+          slidesPerView={1}
+          pagination={{ clickable: true }}
+          className="pricing-slider"
+        >
+          <SwiperSlide>
+            <PricingBox
+              packageName="One Page Profissional"
+              subtitle="Profissionais, pequenos negócios e lançamentos de produtos."
+            >
+              <OfferList text="Site único e impactante" status="active" />
+              <OfferList text="Design profissional e responsivo" status="active" />
+              <OfferList text="Otimização para SEO e velocidade" status="active" />
+              <OfferList text="Integração com redes sociais" status="active" />
+              <OfferList text="Entrega rápida" status="active" />
+            </PricingBox>
+          </SwiperSlide>
 
+          <SwiperSlide>
+            <PricingBox
+              packageName="Website Empresarial"
+              subtitle="Empresas que precisam de um site estruturado para fortalecer a marca."
+            >
+              <OfferList text="Site multi-página" status="active" />
+              <OfferList text="Painel administrativo" status="active" />
+              <OfferList text="Gerenciador de conteúdo" status="active" />
+              <OfferList text="Otimização para SEO e Google Analytics" status="active" />
+              <OfferList text="Integrações personalizadas" status="active" />
+            </PricingBox>
+          </SwiperSlide>
+
+          <SwiperSlide>
+            <PricingBox
+              packageName="Software Essencial"
+              subtitle="Pequenas empresas que precisam de automação de processos."
+            >
+              <OfferList text="Sistema web funcional e personalizado para demandas específicas" status="active" />
+              <OfferList text="Login de usuários e painel administrativo" status="active" />
+              <OfferList text="Banco de dados e CRUD (criação, leitura, atualização e exclusão)" status="active" />
+              <OfferList text="Integração com APIs básicas" status="active" />
+              <OfferList text="Ambiente seguro e escalável" status="active" />
+            </PricingBox>
+          </SwiperSlide>
+
+          <SwiperSlide>
+            <PricingBox
+              packageName="Software Avançado"
+              subtitle="Empresas que precisam de sistemas de alto desempenho e escalabilidade."
+            >
+              <OfferList text="Desenvolvimento de software robusto e escalável" status="active" />
+              <OfferList text="Integração com sistemas terceiros (ERP, CRM, pagamentos, etc..)" status="active" />
+              <OfferList text="Inteligência Artificial, BI e automação de processos" status="active" />
+              <OfferList text="Infraestrutura em nuvem" status="active" />
+              <OfferList text="Suporte e manutenção contínuos" status="active" />
+            </PricingBox>
+          </SwiperSlide>
+        </Swiper>
+        ) : (
         <div className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 lg:grid-cols-2">
+          
           <PricingBox
             packageName="One Page Profissional"
             subtitle="Profissionais, pequenos negócios e lançamentos de produtos."
@@ -61,6 +140,7 @@ const Pricing = () => {
           </PricingBox>
 
         </div>
+        )}
       </div>
 
       <div className="absolute bottom-0 left-0 z-[-1]">

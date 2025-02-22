@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="container">
           <div className="-mx-4 flex flex-wrap">
             <div className="w-full px-4">
-              <div className="flex items-center justify-between w-full mb-1 lg:mb-1">
+              <div className="flex items-center justify-around w-full mb-1 lg:mb-1">
                 <Link href="/" className="inline-block">
                   <Image
                     src="/images/logo/logo1.svg"
@@ -26,10 +26,20 @@ const Footer = () => {
                     height={30}
                   />
                 </Link>
-                <p className="text-base leading-relaxed text-body-color dark:text-body-color-dark">
-                  Soluções tecnológicas inovadoras para impulsionar o seu negócio.
+                
+                <p className="dev-plenatech text-center text-base text-body-color dark:text-white">
+                  Desenvolvido por{" "}
+                  <a
+                    href="http://techplena.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-primary"
+                  >
+                    Plena Tech
+                  </a>{" "}             
                 </p>
-                <div className="flex items-center ml-20">
+
+                <div className="social-brands flex items-center ml-20">
                   <a
                     href="/"
                     aria-label="social-link"
@@ -38,8 +48,8 @@ const Footer = () => {
                     className="mr-6 text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                   >
                     <svg
-                      width="18"
-                      height="18"
+                      width="24"
+                      height="24"
                       viewBox="0 0 22 22"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
@@ -59,8 +69,8 @@ const Footer = () => {
                     className="mr-6 text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                   >
                     <svg
-                      width="18"
-                      height="18"
+                      width="24"
+                      height="24"
                       viewBox="0 0 22 22"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
@@ -82,7 +92,7 @@ const Footer = () => {
                     className="mr-6 text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                   >
                     
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-instagram"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-instagram"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
                   </a>
 
                   <a
@@ -93,8 +103,8 @@ const Footer = () => {
                     className="text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                   >
                     <svg
-                      width="17"
-                      height="16"
+                      width="24"
+                      height="24"
                       viewBox="0 0 17 16"
                       className="fill-current"
                     >
@@ -113,21 +123,9 @@ const Footer = () => {
             
 
           <div className="h-px w-full bg-gradient-to-r from-transparent via-[#D2D8E183] to-transparent dark:via-[#959CB183]"></div>
-          <div className="py-8">
-            <p className="text-center text-base text-body-color dark:text-white">
-              Desenvolvido por{" "}
-              <a
-                href="http://techplena.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-primary"
-              >
-                Plena Tech
-              </a>{" "}             
-            </p>
-          </div>
+          
         </div>
-        <div className="absolute right-0 top-14 z-[-1]">
+        <div className="my-egg absolute right-0 top-14 z-[-1]">
           <svg
             width="55"
             height="99"

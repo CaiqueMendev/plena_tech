@@ -31,3 +31,35 @@
     @apply opacity-100;
   }
 }
+
+#home {
+  height: 100vh;
+  align-content: center;
+}
+
+@media (max-width: 768px) {
+  .about-2 {
+    flex-direction: column-reverse;
+  }
+
+  .my-egg {
+    display: none;
+  }
+
+  .social-brands {
+    margin-right: 8px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dev-plenatech {
+    font-size: 8px;
+    line-height: normal;
+  }
+
+}
+
+

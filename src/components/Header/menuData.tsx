@@ -19,42 +19,5 @@ const menuData: Menu[] = [
     path: "/contact",
     newTab: false,
   },
-  {
-    id: 4,
-    title: "Navegação",
-    newTab: false,
-    submenu: [
-      {
-        id: 41,
-        title: "Sobre",
-        path: "/about",
-        newTab: false,
-      },
-      {
-        id: 42,
-        title: "Contato",
-        path: "/contact",
-        newTab: false,
-      },
-      {
-        id: 46,
-        title: "Entrar",
-        path: "/signin",
-        newTab: false,
-      },
-      {
-        id: 47,
-        title: "Cadastre-se",
-        path: "/signup",
-        newTab: false,
-      },
-      {
-        id: 48,
-        title: "Erro",
-        path: "/error",
-        newTab: false,
-      },
-    ],
-  },
 ];
 export default menuData;

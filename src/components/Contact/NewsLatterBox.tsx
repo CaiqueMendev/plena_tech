@@ -1,9 +1,38 @@
 "use client";
 
 import { useTheme } from "next-themes";
+import { useState } from "react";
 
 const NewsLatterBox = () => {
   const { theme } = useTheme();
+
+  const [formData, setFormData] = useState({ nome: "", email: ""});
+    const [status, setStatus] = useState<string | null>(null);
+    const [statusType, setStatusType] = useState<"success" | "error" | null>(null);
+  
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+  
+    const handleSubmit = async (e: React.FormEvent) => {
+      e.preventDefault();
+  
+      const response = await fetch("/api/newslatter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+  
+      if (response.ok) {
+        setStatus("Inscrição realizada com sucesso!");
+        setStatusType("success");
+        setFormData({ nome: "", email: "" });
+      } else {
+        setStatus("Erro ao se inscrever.");
+        setStatusType("error");
+      };
+  
+    };
 
   return (
     <div className="relative z-10 rounded-sm bg-white p-8 shadow-three dark:bg-gray-dark sm:p-11 lg:p-8 xl:p-11">
@@ -14,26 +43,43 @@ const NewsLatterBox = () => {
         Receba conteúdos exclusivos sobre desenvolvimento de software, tendências do mercado, dicas para otimizar sua empresa com tecnologia e muito mais!
       </p>
       <div>
-        <input
-          type="text"
-          name="name"
-          placeholder="Nome"
-          className="border-stroke mb-4 w-full rounded-sm border bg-[#f8f8f8] px-6 py-3 text-base text-body-color outline-none focus:border-primary dark:border-transparent dark:bg-[#2C303B] dark:text-body-color-dark dark:shadow-two dark:focus:border-primary dark:focus:shadow-none"
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="E-mail"
-          className="border-stroke mb-4 w-full rounded-sm border bg-[#f8f8f8] px-6 py-3 text-base text-body-color outline-none focus:border-primary dark:border-transparent dark:bg-[#2C303B] dark:text-body-color-dark dark:shadow-two dark:focus:border-primary dark:focus:shadow-none"
-        />
-        <input
-          type="submit"
-          value="Inscreva-se"
-          className="mb-5 flex w-full cursor-pointer items-center justify-center rounded-sm bg-primary px-9 py-4 text-base font-medium text-white shadow-submit duration-300 hover:bg-primary/90 dark:shadow-submit-dark"
-        />
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            name="nome"
+            value={formData.nome}
+            onChange={handleChange}
+            required
+            placeholder="Nome"
+            className="border-stroke mb-4 w-full rounded-sm border bg-[#f8f8f8] px-6 py-3 text-base text-body-color outline-none focus:border-primary dark:border-transparent dark:bg-[#2C303B] dark:text-body-color-dark dark:shadow-two dark:focus:border-primary dark:focus:shadow-none"
+          />
+          <input
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+            placeholder="E-mail"
+            className="border-stroke mb-4 w-full rounded-sm border bg-[#f8f8f8] px-6 py-3 text-base text-body-color outline-none focus:border-primary dark:border-transparent dark:bg-[#2C303B] dark:text-body-color-dark dark:shadow-two dark:focus:border-primary dark:focus:shadow-none"
+          />
+          <button
+            type="submit"
+            className="mb-5 flex w-full cursor-pointer items-center justify-center rounded-sm bg-primary px-9 py-4 text-base font-medium text-white shadow-submit duration-300 hover:bg-primary/90 dark:shadow-submit-dark"
+          >
+            Inscreva-se  
+          </button>
+        </form>
         <p className="text-center text-base leading-relaxed text-body-color dark:text-body-color-dark">
           Fique tranquilo! Só enviamos conteúdos relevantes e de qualidade. Nada de spam!
         </p>
+        {status && (
+            <div
+              className={`rounded-sm px-6 py-2 mt-3 text-base font-medium text-white shadow-submit duration-300 
+              ${statusType === "success" ? "bg-green-500" : "bg-red-500"}`}
+            >
+              {status}
+            </div>
+          )}
       </div>
 
       <div>

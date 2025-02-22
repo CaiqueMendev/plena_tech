@@ -1,4 +1,5 @@
 import NewsLatterBox from "./NewsLatterBox";
+import ContactForm from "./ContactForm";
 
 const Contact = () => {
   return (
@@ -17,61 +18,7 @@ const Contact = () => {
               <p className="mb-12 text-base font-medium text-body-color">
                Fale conosco! Seja para tirar dúvidas, solicitar um orçamento ou discutir sua ideia, nossa equipe está pronta para oferecer a melhor solução para você.
               </p>
-              <form>
-                <div className="-mx-4 flex flex-wrap">
-                  <div className="w-full px-4 md:w-1/2">
-                    <div className="mb-8">
-                      <label
-                        htmlFor="name"
-                        className="mb-3 block text-sm font-medium text-dark dark:text-white"
-                      >
-                        Nome
-                      </label>
-                      <input
-                        type="text"
-                        placeholder="Digite seu nome"
-                        className="border-stroke w-full rounded-sm border bg-[#f8f8f8] px-6 py-3 text-base text-body-color outline-none focus:border-primary dark:border-transparent dark:bg-[#2C303B] dark:text-body-color-dark dark:shadow-two dark:focus:border-primary dark:focus:shadow-none"
-                      />
-                    </div>
-                  </div>
-                  <div className="w-full px-4 md:w-1/2">
-                    <div className="mb-8">
-                      <label
-                        htmlFor="email"
-                        className="mb-3 block text-sm font-medium text-dark dark:text-white"
-                      >
-                        E-mail
-                      </label>
-                      <input
-                        type="email"
-                        placeholder="Digite seu email"
-                        className="border-stroke w-full rounded-sm border bg-[#f8f8f8] px-6 py-3 text-base text-body-color outline-none focus:border-primary dark:border-transparent dark:bg-[#2C303B] dark:text-body-color-dark dark:shadow-two dark:focus:border-primary dark:focus:shadow-none"
-                      />
-                    </div>
-                  </div>
-                  <div className="w-full px-4">
-                    <div className="mb-8">
-                      <label
-                        htmlFor="message"
-                        className="mb-3 block text-sm font-medium text-dark dark:text-white"
-                      >
-                        Mensagem
-                      </label>
-                      <textarea
-                        name="message"
-                        rows={5}
-                        placeholder="Digite sua Mensagem"
-                        className="border-stroke w-full resize-none rounded-sm border bg-[#f8f8f8] px-6 py-3 text-base text-body-color outline-none focus:border-primary dark:border-transparent dark:bg-[#2C303B] dark:text-body-color-dark dark:shadow-two dark:focus:border-primary dark:focus:shadow-none"
-                      ></textarea>
-                    </div>
-                  </div>
-                  <div className="w-full px-4">
-                    <button className="rounded-sm bg-primary px-9 py-4 text-base font-medium text-white shadow-submit duration-300 hover:bg-primary/90 dark:shadow-submit-dark">
-                      Enviar
-                    </button>
-                  </div>
-                </div>
-              </form>
+              <ContactForm />
             </div>
           </div>
           <div className="w-full px-4 lg:w-5/12 xl:w-4/12">
