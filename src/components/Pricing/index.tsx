@@ -44,6 +44,7 @@ const Pricing = () => {
             <PricingBox
               packageName="One Page Profissional"
               subtitle="Profissionais, pequenos negócios e lançamentos de produtos."
+              destiny="/product1"
             >
               <OfferList text="Site único e impactante" status="active" />
               <OfferList text="Design profissional e responsivo" status="active" />
@@ -57,6 +58,7 @@ const Pricing = () => {
             <PricingBox
               packageName="Website Empresarial"
               subtitle="Empresas que precisam de um site estruturado para fortalecer a marca."
+              destiny="/product2"
             >
               <OfferList text="Site multi-página" status="active" />
               <OfferList text="Painel administrativo" status="active" />
@@ -70,6 +72,7 @@ const Pricing = () => {
             <PricingBox
               packageName="Software Essencial"
               subtitle="Pequenas empresas que precisam de automação de processos."
+              destiny="/product3"
             >
               <OfferList text="Sistema web funcional e personalizado para demandas específicas" status="active" />
               <OfferList text="Login de usuários e painel administrativo" status="active" />
@@ -83,6 +86,7 @@ const Pricing = () => {
             <PricingBox
               packageName="Software Avançado"
               subtitle="Empresas que precisam de sistemas de alto desempenho e escalabilidade."
+              destiny="/product4"
             >
               <OfferList text="Desenvolvimento de software robusto e escalável" status="active" />
               <OfferList text="Integração com sistemas terceiros (ERP, CRM, pagamentos, etc..)" status="active" />
@@ -98,6 +102,7 @@ const Pricing = () => {
           <PricingBox
             packageName="One Page Profissional"
             subtitle="Profissionais, pequenos negócios e lançamentos de produtos."
+            destiny="/product1"
           >
             <OfferList text="Site único e impactante" status="active" />
             <OfferList text="Design profissional e responsivo" status="active" />
@@ -109,6 +114,7 @@ const Pricing = () => {
           <PricingBox
             packageName="Website Empresarial"
             subtitle="Empresas que precisam de um site estruturado para fortalecer a marca."
+            destiny="/product2"
           >
             <OfferList text="Site multi-página" status="active" />
             <OfferList text="Painel administrativo" status="active" />
@@ -120,6 +126,7 @@ const Pricing = () => {
           <PricingBox
             packageName="Software Essencial"
             subtitle="Pequenas empresas que precisam de automação de processos."
+            destiny="/product3"
           >
             <OfferList text="Sistema web funcional e personalizado para demandas específicas" status="active" />
             <OfferList text="Login de usuários e painel administrativo" status="active" />
@@ -131,6 +138,7 @@ const Pricing = () => {
           <PricingBox
             packageName="Software Avançado"
             subtitle="Empresas que precisam de sistemas de alto desempenho e escalabilidade."
+            destiny="/product4"
           >
             <OfferList text="Desenvolvimento de software robusto e escalável" status="active" />
             <OfferList text="Integração com sistemas terceiros (ERP, CRM, pagamentos, etc..)" status="active" />

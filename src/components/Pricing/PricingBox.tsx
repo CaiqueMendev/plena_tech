@@ -4,8 +4,9 @@ const PricingBox = (props: {
   packageName: string;
   subtitle: string;
   children: React.ReactNode;
+  destiny: string;
 }) => {
-  const {packageName, subtitle, children } = props;
+  const {packageName, subtitle, children, destiny } = props;
 
   return (
     <div className="w-full">
@@ -20,7 +21,7 @@ const PricingBox = (props: {
           <p>{subtitle}</p>
         </div>
        <div className="mb-8 border-b border-body-color border-opacity-10 pb-8 dark:border-white dark:border-opacity-10">
-          <Link href={"/contact"}>
+          <Link href={destiny}>
             <button className="flex w-60 items-center justify-center rounded-sm bg-primary p-3 text-base font-semibold text-white transition duration-300 ease-in-out hover:bg-opacity-80 hover:shadow-signUp">
               Solicitar Desenvolvimento
             </button>
