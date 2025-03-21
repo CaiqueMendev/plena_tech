@@ -1,7 +1,7 @@
 import OpenAI from "openai";
 
 const openai = new OpenAI({
-  apiKey: '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',
+  apiKey : process.env.API_KEY,
 });
 
 const prompt = `
@@ -28,7 +28,11 @@ Como os usuários podem não ter conhecimento técnico, faça perguntas **uma de
 
 4️⃣ Continue perguntando sobre tecnologias, integração e orçamento **apenas depois da resposta anterior**.  
 
-5️⃣ Finalize com um resumo das respostas coletadas.  
+5️⃣ Confirme os dados com um resumo das respostas coletadas. 
+
+6️⃣ Colete os dados para contato
+
+7️⃣ Informe que os parametros do sistema serão passados para a equipe de desenvolvimento e entraremos em contato
 
 Se o usuário perguntar algo fora do escopo, mantenha a conversa focada na coleta de requisitos.
 `;
